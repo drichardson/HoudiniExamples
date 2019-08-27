@@ -1,0 +1,28 @@
+void rubix_resetpointgroups(const vector p; const int ptnum; const float xMax, yMax, zMax) {
+    setpointgroup(0, 'top', ptnum, 0);
+    setpointgroup(0, 'bot', ptnum, 0);
+    setpointgroup(0, 'right', ptnum, 0);
+    setpointgroup(0, 'left', ptnum, 0);
+    setpointgroup(0, 'front', ptnum, 0);
+    setpointgroup(0, 'back', ptnum, 0);
+
+    if(p.y >= yMax) {
+        setpointgroup(0, 'top', ptnum, 1);
+    }
+    if(p.y <= -yMax) {
+        setpointgroup(0, 'bot', ptnum, 1);
+    }
+    if(p.x >= xMax) {
+        setpointgroup(0, 'right', ptnum, 1);
+    }
+    if(p.x <= -xMax) {
+        setpointgroup(0, 'left', ptnum, 1);
+    }
+    if(p.z >= zMax) {
+        setpointgroup(0, 'front', ptnum, 1);
+    }
+    if(p.z <= -zMax) {
+        setpointgroup(0, 'back', ptnum, 1);
+    }
+}
+
